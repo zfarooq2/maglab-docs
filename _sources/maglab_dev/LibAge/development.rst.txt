@@ -1,0 +1,22 @@
+LibAge
+======
+
+Development
+-----------
+
+Software
+^^^^^^^^
+
+LibAge uses the Python and Django stack.
+
+Setting up
+^^^^^^^^^^
+
+See information of setting up with Python Django.
+
+Branches
+^^^^^^^^
+
+For major development work it is generally better to start a new branch and merge when required. 
+
+For non-breaking work, like typos and minor bugs, making the changes directly to master is fine.

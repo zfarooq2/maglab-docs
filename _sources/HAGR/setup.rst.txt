@@ -1,0 +1,19 @@
+HAGR Development
+===============
+
+Software
+^^^^^^^^
+
+HAGR is built using PHP, it doesn't use a web framework or any particularly strict design pattern. The backend database is MySQL, of which there is a database for each resource e.g. GenAge, GenDR, DrugAge, etc.
+
+IDE
+^^^
+
+I have been using LiClipse for development, of HAGR and any DAA changes as I thought it may work better with Python, although Eclipse is a good option.
+
+Setup
+^^^^^
+
+Setting up a project to run the PHP code is pretty straight forward using Eclipse or other IDEs. 
+
+You will also need to then setup Apache locally to serve the pages.

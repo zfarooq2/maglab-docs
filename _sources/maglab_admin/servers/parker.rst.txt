@@ -1,0 +1,40 @@
+Parker
+======
+
+Parker is the second server bought and serves as a general purpose bioinformatics machine. Due to my shortsightedness when building and formatting the machine all programs that are compiled are stored in /opt on a separate partition due to lack of space on the main partition.
+
+.. sidebar:: Details
+
+   :Internal IP Address: 192.168.26.2
+
+Specifications
+---------------
+
+* Custom built rack mount
+* 2 x Intel(R) Xeon(R) CPU X5670  @ 2.93GHz (6 core, hyperthreaded for 12)
+* 48GiB Memory, 100GiB Swap
+* 7TiB disk space (6 disks)
+  
+  * 9.6MiB GRUB
+  * md0: 100GiB RAID10 (/)
+  * md1: 100GiB RAID10 (swap)
+  * md2: 6.9TiB RAID6 (/base1; soon to be /opt)
+
+Services
+--------
+
+* Database server (PostgreSQL)
+
+Mounts
+------
+
+* /base (larder:/larder/homes)
+
+Location
+--------
+
+.. important::
+   Parker requires a key to access the front panel; This is tied to the handle.
+
+.. image:: parker_location_map.png
+   :alt: Parker is located on the top of the first rack to the right when entering the Life Sciences server room.

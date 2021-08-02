@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HAGR &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LibAge" href="../LibAge/development.html" />
+    <link rel="prev" title="The Digital Ageing Atlas" href="../DAA/development.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_admin/index.html">Maglab SysAdmin Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab Development Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">HAGR</a><ul>
+<li><a class="reference internal" href="#development">Development</a><ul>
+<li><a class="reference internal" href="#software">Software</a></li>
+<li><a class="reference internal" href="#ide">IDE</a></li>
+<li><a class="reference internal" href="#setting-up">Setting up</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+<li><a class="reference internal" href="#branches">Branches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../DAA/development.html" title="Previous Chapter: The Digital Ageing Atlas"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; The Digital A...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../LibAge/development.html" title="Next Chapter: LibAge"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">LibAge &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_dev/HAGR/development.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="hagr">
+<h1>HAGR<a class="headerlink" href="#hagr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
+<p>HAGR is based on PHP, it doesn’t use a web framework or any particularly strict design pattern.</p>
+<p>The backend database is MySQL, of which there is a database for each resource e.g. GenAge, GenDR, DrugAge, etc.</p>
+</div>
+<div class="section" id="ide">
+<h3>IDE<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h3>
+<p>I have been using LiClipse for development for HAGR and any DAA changes as I thought it may work better with Python, although Eclipse is a good option.</p>
+</div>
+<div class="section" id="setting-up">
+<h3>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All HTML files are treated as PHP files by the server. This is to allow inclusion of header and footer files to simplify development while still maintaining backwards compatibility with old URL’s. This is defined in a .htaccess file in the root directory.</p>
+</div>
+<p>Setting up HAGR for a local deployment is easy. You simply download from git and set it up with a PHP based webserver (such as Apache) on your local system.</p>
+<p>Each HAGR database (e.g. GenAge) has a separate MySQL database behind it. Simply download and set up each one. You may need to change the configuration in <code class="docutils literal"><span class="pre">/functions/db_config.php</span></code> to point to the correct databases.</p>
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>The database is MySQL, which will need exporting from the beta version of HAGR on the maglab server. The Live HAGR data is only accessible by Pedro.</p>
+</div>
+<div class="section" id="branches">
+<h3>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h3>
+<p>For major development work it is generally better to start a new branch and merge when required. For non-breaking work, like typos and minor bugs, making the changes directly to master is fine. Make sure that you pull before doing major work as Pedro contributes heavily towards the sites.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+Server Monitoring
+=================
+
+There are multiple different systems that work together to support basic monitoring and metrics on across the servers. The server aspects all run on Alfred and take in data from clients on each of the systems.
+
+The Core
+--------
+
+The core system runs on using Sensu, an open source monitoring system. It is spread over multiple daemons and systems as defined below:
+
+Dashboard
+^^^^^^^^^
+
+:Port: 8085
+:Password protected: Yes
+:Service: /etc/init.d/uchiwa
+:Configuration: /etc/sensu/uciwa.json
+
+This display all the alerts and statuses of the servers. Anything that has been identified as a problem is shown here.
+
+Graphite
+^^^^^^^^
+
+:Port: 8086
+:API port: 2003
+:Service: /etc/init.d/graphite-carbon.conf
+:Configuration: /opt/graphite/conf/carbon.conf
+
+Handles the storage and display of server metrics. Graphs aren't pretty or easy to deal with so an alternative graphing system is used.
+
+RabbitMQ
+^^^^^^^^
+
+:Port: 8087
+:Service: /etc/init.d/rabbitmq-server
+:Configuration: /etc/rabbitmq/rabbitmq.config
+
+This is the queue manager that handles the output from the various client servers so needs to be internet accessible. All of the connections are protected through SSL.
+
+Graphing
+--------
+
+Although the Graphite service does provide graphing capabilities these are not easy to use or very nice to look at.
+
+Grafana
+^^^^^^^
+
+The Grafana website contains an overview of all of the servers key metrics as well as more detailed dashboards covering these, along with others, in more detail. It is a javascript powered website so settings are kept in Nginx and in some configuration files in the directory.
+
+:Port: 8088
+:Configuration: /srv/www/grafana/config.js
+:Nginx Configuration: /etc/nginx/sites-available/grafana.conf

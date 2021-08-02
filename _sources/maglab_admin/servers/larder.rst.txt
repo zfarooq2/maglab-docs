@@ -1,0 +1,32 @@
+Larder
+======
+
+Larder is a storage server and is only to be accessed by ordinary users through their home directories. No programs are to be run on it that are not related to its primary purpose as a storage machine. It uses a USB key to boot because GRUB was being awkward and this was the simplest and easiest solution. The key itself is attached to an internal USB port.
+
+The server exports a ZFS zpool called /larder/homes that stores the home directories of all of the servers.
+
+Unlike the other servers this is based in the CSD server room and therefore you will need to go to the CSD building if you have any issues.
+
+.. sidebar:: Details
+
+   :External IP Address: 138.253.197.190
+   :Internal IP Address: 192.168.20.1
+   :Tunnel IP: 10.34.36.31
+
+Specifications
+---------------
+
+* Viglen built rack mount
+* 2 x Intel(R) Xeon(R) CPU E5-2603 v2 @ 1.80GHz (4 core) 
+* 16GiB Memory
+* 66TiB disk space (28 disks + cache disk + os disk + boot disk)
+  
+  * 42GB SSD RAID0 (pass-through) (/)
+  * 4GB USB key (/boot)
+  * zpool 28x2TB RAID0 + 1 30GB L2ARC cache (/larder)
+
+Location
+--------
+
+.. image:: larder_location_map.png
+   :alt: Larder is located mid way up a rack in the CSD Server Room.

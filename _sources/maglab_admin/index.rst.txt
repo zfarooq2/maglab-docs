@@ -1,0 +1,20 @@
+.. Maglab SysAdmin Guide documentation master file, created by
+   sphinx-quickstart on Tue Jul 29 10:16:38 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Maglab SysAdmin Guide
+=====================
+
+This guide contains all the operational information you will need to run the servers and websites in the Maglab group. It is divided up into sections; Each covers the specifics of its operation.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   basics
+   servers
+   accounts
+   websites
+   monitoring   

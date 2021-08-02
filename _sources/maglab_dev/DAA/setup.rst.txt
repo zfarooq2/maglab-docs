@@ -1,0 +1,91 @@
+The Digital Ageing Atlas
+========================
+
+Development
+-----------
+
+This page contains some brief notes on how to setup for development of the DAA. 
+
+It's by no means a step by step guide, but hopefully provides enough pointers.
+
+For additional information on deploying and server configuration of the DAA, see the administration guide: `Maglab Admin Guide <http://alfred.liv.ac.uk/docs/administration/websites/daa.html>`_
+
+Software
+^^^^^^^^
+
+The DAA is built using Python and the Django framework. At present it uses Python 2.7 and Django 1.8. The backend database is PostgreSQL.
+
+IDE
+^^^
+
+I have been using LiClipse for development, it seems to provide quite good support for development in Python. 
+However Eclipse and PyCharm are possibly the more widely used options generally speaking for Python development.
+
+Setting up
+^^^^^^^^^^
+
+The code can be downloaded from the labs main git repository into a new local directory using::
+
+    git clone git@alfred.liv.ac.uk:thomas/the-digital-ageing-atlas.git
+
+For more information on the Git repository click `here`.
+
+There are a few other steps that are required to get a working local copy. 
+
+If you are not familiar with Python virtualenv and installing packages with pip, have a read here:
+
+`<https://packaging.python.org/guides/installing-using-pip-and-virtualenv/>`_
+
+You will need to set up a Python virtualenv in a directory called 'env'::
+
+    virtualenv env
+
+Then activate the new virtualenv directory by running::
+
+    env/bin/source activate
+
+Any new python packages will now be installed in the env directory, thus isolating them for the project.
+
+Install project dependencies using pip and the requirements.txt file: 
+  
+.. warning::
+   There may be non-python library requirements (e.g. libXML) that you will be require to install before some of the python modules will work. Simply keep running the command below until all the errors are gone!
+   
+::
+  
+   env/bin/pip install -r requirements.txt
+
+In the IDE, point a new Python project at your project folder (possibly under 'preferences').
+
+Configure the project preferences in the IDE to ensure it uses the version of python installed in the virtualenv.
+
+Database
+^^^^^^^^
+
+Install postgres 9.3 locally. Once installed create a database called daa or beta_daa.
+
+Get a copy of the DAA database and import it into PostgreSQL locally. 
+
+The best way to get the data is to take an export of the Live database or another recent export. 
+
+Change the Django settings.py file if required to point to the local database but **DO NOT** commit your local specific changes back.
+
+Configuration
+^^^^^^^^^^^^^
+
+Django uses a settings.py file to store various configuration options. As mentioned, you'll need to change the database name, user and password. There are also a couple of places where directories, so these will need adjusting
+
+Run the Application
+^^^^^^^^^^^^^^^^^^^
+
+Django comes with it's own basic webserver, for development I have used this by running the following command (create a new 'run configuration' in the IDE)::
+
+    manage.py runserver
+    
+The above command needs to use the Python version that has been packaged up in the virtualenv directory, so you should have configured the IDE to point to this. 
+
+Branches
+^^^^^^^^
+
+For major development work it is generally better to start a new branch and merge when required. For non-breaking work, like typos and minor bugs, making the changes directly to master is fine.
+

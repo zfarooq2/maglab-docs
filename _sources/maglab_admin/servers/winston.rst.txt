@@ -1,0 +1,35 @@
+Winston
+=======
+
+Winston is the heavy lifting server for the group. It was bought to allow the assembly and annotation of genomes and has been used to annotate the Bowhead whale genome. The server usually runs under a heavy load when in use.
+
+.. sidebar:: Details
+
+   :Internal IP Address: 192.168.26.3
+
+Specifications
+---------------
+
+* Viglen built rack mount
+* 2 x Intel(R) Xeon(R) CPU E5506  @ 2.13GHz (4 core) 
+* 512GiB Memory
+* 7.4TiB disk space (hardware RAID)
+  
+  * 100mb (/boot)
+  * 7.2TiB (/)
+  
+Services
+--------
+
+* Database server (PostgreSQL)
+
+Mounts
+------
+
+* /base (larder:/larder/homes)
+
+Location
+--------
+
+.. image:: winston_location_map.png
+   :alt: Winston is located on the top shelf, under Alfred, in the Life Sciences server room.

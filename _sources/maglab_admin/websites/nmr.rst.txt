@@ -1,0 +1,47 @@
+The Naked Mole-Rat Genome Resource
+==================================
+
+A custom genome portal built for the Naked Mole-rat genome.
+
+.. sidebar:: Details
+
+   :Language: Python 2
+   :Database: PostgreSQL
+   :Server: Maglab2
+   :URL: http://naked-mole-rat.org
+   :Git: git@alfred.liv.ac.uk:thomas/naked-mole-rat-portal.git
+   :Developers: - Thomas Craig
+
+History
+-------
+
+A much more detailed portal for the Naked mole-rat genome to replace the much simpler website that was there before. This one has more details on the genome as well as a genome browser.
+
+Procedures
+----------
+
+Adding Data
+^^^^^^^^^^^
+
+There are import management command functions that are defined in the NMR portal documentation. Some data will require reloading the entire database if affects the underlying sequences.
+
+Deploying
+^^^^^^^^^
+
+Ensure that the new version has been pushed upstream. You can then log on to the server and pull the new version into the directly. Simply restart to complete the update.
+
+The NMR portal also has a BLAST server that operates as a separate application. The pyBLAST application is installed by pip from git repo. This allows easy updates, simply call pip install pyblast --upgrade to update.
+
+Server Configuration
+--------------------
+
+Upstart config
+   /etc/init/nmr.conf
+   /etc/init/nmr_blast.conf
+Nginx config
+   /etc/nginx/sites-enabled/naked-mole-rat.org.conf
+Location
+   /srv/www/naked-mole-rat.org/
+Database
+   nmr
+

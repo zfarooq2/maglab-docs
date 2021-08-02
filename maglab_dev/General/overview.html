@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Development Overview &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../genome_resources/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setting_up_django_projects.html">Python Django Set-up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_admin/index.html">Maglab SysAdmin Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Development Overview</a><ul>
+<li><a class="reference internal" href="#the-human-genomic-ageing-resources">The Human Genomic Ageing Resources</a><ul>
+<li><a class="reference internal" href="#future-directions">Future Directions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-digital-ageing-atlas">The Digital Ageing Atlas</a><ul>
+<li><a class="reference internal" href="#id1">Future Directions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_dev/general/overview.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="development-overview">
+<h1>Development Overview<a class="headerlink" href="#development-overview" title="Permalink to this headline">¶</a></h1>
+<p>The main lab websites to be aware of:</p>
+<ul class="simple">
+<li>The Digital Ageing Atlas <a class="reference external" href="http://ageing-map.org/">(DAA)</a></li>
+<li>The Human Genomic Ageing Resources <a class="reference external" href="http://genomics.senescence.info/">(HAGR)</a></li>
+<li><dl class="first docutils">
+<dt>Genome Resources</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="http://naked-mole-rat.org/">The Naked Mole Rat Genome resource</a></li>
+<li><a class="reference external" href="http://bowhead-whale.org/">The Bowhead Whale Genome resource</a></li>
+<li><a class="reference external" href="http://arctica-islandica.ageing-map.org/">The Ocean Clam transcriptome</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>In addition there are other websites such as the Crypreservation site (<a class="reference external" href="http://cryopreservation.org.uk/">http://cryopreservation.org.uk/</a>), ActiveSeti (<a class="reference external" href="http://active-seti.info/">http://active-seti.info/</a>), as well as Pedro also has is own site with essays and other information on ageing (<a class="reference external" href="http://jp.senescence.info/">http://jp.senescence.info/</a>). However these have not generally required regular maintenance.</p>
+<p>I have been using LiClipse to development all these sites (if not just a text editor!), although Eclipse or similar should be fine.</p>
+<div class="section" id="the-human-genomic-ageing-resources">
+<h2>The Human Genomic Ageing Resources<a class="headerlink" href="#the-human-genomic-ageing-resources" title="Permalink to this headline">¶</a></h2>
+<p>HAGR receives the most development attention, as it’s the most widely cited and the original website set up by Joao Pedro. It was created in 2004-2005 as just GenAge and AnAge, then more similar databases were added - GenDR, LongevityMap, DrugAge and CellAge.
+These are basically curated datasets that have been turned into a MySQL database then made available as a web application using PHP.
+Generally HAGR follows a similar pattern, there are folders within a PHP app for each resource e.g. ‘cells’ or ‘drugs’ for CellAge and DrugAge, respectively. There are not many shared functions in HAGR, each new resource tends to repeat code quite a bit.</p>
+<p>There is a central hagr.css file and some shared Javascript, as well as a ‘functions’ directory - things have got a bit cumbersome and messy, therefore if any further common features are added we may want to consider the design.</p>
+<div class="section" id="future-directions">
+<h3>Future Directions<a class="headerlink" href="#future-directions" title="Permalink to this headline">¶</a></h3>
+<p>There has been talk of migrating things to Django, that way the lab resources would be consistent and it would turn HAGR into something more structured.
+There has also been talk for the pending grant application to introduce more API features to HAGR, so as part of that it could be a could time to move to Django.</p>
+<p>From a technical point of view, HAGR is the only website that is based on PHP and is manually crafted together. It also uses MySQL, whereas the other lab websites developed since are using PostgreSQL and Python Django.</p>
+</div>
+</div>
+<div class="section" id="the-digital-ageing-atlas">
+<h2>The Digital Ageing Atlas<a class="headerlink" href="#the-digital-ageing-atlas" title="Permalink to this headline">¶</a></h2>
+<p>The DAA has not received funding at the time of writing, and between 2015 and 2018, only received minimal development effort.
+The DAA details changes that occur with age, at e.g. the molecular and physiological level. At present it includes human and mice data, with plans to integrate further data including rat.</p>
+<p>The DAA is based on Python Django, with a PostgreSQL database.</p>
+<div class="section" id="id1">
+<h3>Future Directions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A number of additional molecular changes have been identified from microarray data, so these will be incorporated into the DAA. However the design is likely to need to change to accommodate the data and to improve the user interface to browse the additional data.
+Until the DAA receives funding, this work is on hold.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

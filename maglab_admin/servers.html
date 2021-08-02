@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Servers &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alfred" href="servers/alfred.html" />
+    <link rel="prev" title="SysAdmin basics" href="basics.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">The Servers</a><ul>
+<li><a class="reference internal" href="#general-operation">General Operation</a><ul>
+<li><a class="reference internal" href="#operating-system">Operating System</a></li>
+<li><a class="reference internal" href="#bioinformatics-programs">Bioinformatics Programs</a></li>
+<li><a class="reference internal" href="#r">R</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#network-layout">Network Layout</a><ul>
+<li><a class="reference internal" href="#life-sciences-server-room">Life Sciences Server Room</a></li>
+<li><a class="reference internal" href="#csd-server-room">CSD Server Room</a></li>
+<li><a class="reference internal" href="#linode-london">Linode London</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="basics.html" title="Previous Chapter: SysAdmin basics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; SysAdmin basics</span>
+    </a>
+  </li>
+  <li>
+    <a href="servers/alfred.html" title="Next Chapter: Alfred"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Alfred &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/maglab_admin/servers.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="the-servers">
+<h1>The Servers<a class="headerlink" href="#the-servers" title="Permalink to this headline">¶</a></h1>
+<p>The number of servers in the Maglab group has grown slowly over time as the requirements of the lab for computing power have grown. Because of this, the servers are a little messy in some respects and that needs to be taken into account when dealing with them.</p>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="servers/alfred.html">Alfred</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#mounts">Mounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#ip-tables">IP Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#websites">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/alfred.html#location">Location</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="servers/parker.html">Parker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/parker.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/parker.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/parker.html#mounts">Mounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/parker.html#location">Location</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="servers/winston.html">Winston</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/winston.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/winston.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/winston.html#mounts">Mounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/winston.html#location">Location</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="servers/larder.html">Larder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/larder.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/larder.html#location">Location</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="servers/maglab.html">Maglab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#ip-tables">IP Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#websites">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#location">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#billing">Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab.html#using-the-linode-control-panel">Using the Linode control panel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="servers/maglab2.html">Maglab2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#ip-tables">IP Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#websites">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#location">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#billing">Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers/maglab2.html#using-the-linode-control-panel">Using the Linode control panel</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-operation">
+<h2>General Operation<a class="headerlink" href="#general-operation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operating-system">
+<h3>Operating System<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h3>
+<p>The default OS on all servers is Ubuntu 12.04 (excepting Maglab which uses an old 10.04 kernel). This is standardised to make it easier to keep things in shape and will be supported for a few more years yet.</p>
+</div>
+<div class="section" id="bioinformatics-programs">
+<h3>Bioinformatics Programs<a class="headerlink" href="#bioinformatics-programs" title="Permalink to this headline">¶</a></h3>
+<p>Bioinformatics programs are store in /opt with the previous versions used kept. They layout usually looks as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/opt
+├── cufflinks
+│   ├── cufflinks-1.3.0
+│   ├── cufflinks-2.0.0
+│   └── cufflinks-2.0.2
+</pre></div>
+</div>
+<p>Older programs may be required to replicate previous findings or to compare new and old findings if the program has been changed in a significant way.</p>
+<p>These programs are then symlinked to /usr/local/bin. A helpful script (<code class="docutils literal"><span class="pre">symlinkexec</span></code>) allows you to quickly do this for an entire folder. It will also delete the old symlinks before adding the new ones.</p>
+</div>
+<div class="section" id="r">
+<h3>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
+<p>R is an awkward one; all of the server where it has been installed use the official R repository rather than the default Ubuntu one. This ensure that R is kept up to date rather than lag behind (as the Ubuntu one does). All users keep their modules installed in the home directory to allow easy install of custom modules and to keep them up to date more easily.</p>
+</div>
+</div>
+<div class="section" id="network-layout">
+<h2>Network Layout<a class="headerlink" href="#network-layout" title="Permalink to this headline">¶</a></h2>
+<img alt="Maglab network map" src="../_images/network_map.png" />
+<div class="section" id="life-sciences-server-room">
+<h3>Life Sciences Server Room<a class="headerlink" href="#life-sciences-server-room" title="Permalink to this headline">¶</a></h3>
+<p>All of the servers in the Life Sciences server room access the internet through Alfred (due to a lack of spare ethernet sockets). Alfred therefore acts as a gateway that all users need to log in to access the other servers. Internally they are all connected to a switch not owned by the group.</p>
+</div>
+<div class="section" id="csd-server-room">
+<h3>CSD Server Room<a class="headerlink" href="#csd-server-room" title="Permalink to this headline">¶</a></h3>
+<p>Because of a lack of space in the Life Sciences server room one machine sits in CSD. This is the storage machine and contains all of the home directories for the users. It is connected to the Life Sciences network as well as via a GRE tunnel to Alfred where it appears as a local machine.</p>
+</div>
+<div class="section" id="linode-london">
+<h3>Linode London<a class="headerlink" href="#linode-london" title="Permalink to this headline">¶</a></h3>
+<p>This is a VPS server hosted in a London datacentre. It hosts the lighter of the websites, ones that do not require large databases or heavy processing.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

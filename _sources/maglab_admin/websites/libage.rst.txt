@@ -1,0 +1,81 @@
+LibAge
+======
+
+LibAge acts as a centralised bibliographic database for ageing publications. It is used across HAGR and the DAA to provide referencing capabilities through an API.
+
+.. sidebar:: Details
+
+   :Language: Python 2
+   :Database: PostgreSQL
+   :Server: Maglab
+   :URL: http://libage.ageing-map.org
+   :Git: git@alfred.liv.ac.uk:thomas/libage.git
+   :Developers: - Thomas Craig
+
+History
+-------
+
+LibAge came about because of the overlap between various bibliographic databases in HAGR and the DAA. The DAA was the first to use LibAge for it's references, tying in directly to the curator. The HAGR databases where then transitioned over, starting with the brand new LongevityMap. There where initially some troubles with the database but that is now fixed.
+
+Versions
+--------
+
+The LibAge has two versions: A live and a beta. These use separate databases with changes from the beta being moved to the live version once reviewed. The beta serves references to the beta versions of various databases to allow for them to be updated without causing issues with the live referencing system.
+
+The beta version is tied into the curator application; References can be added directly though it is preferred to use the in-page tools for the various databases (such as the DAA and GenAge) to add the references.
+
+Procedures
+----------
+
+Adding Data
+^^^^^^^^^^^
+
+To add a new reference the `curator <http://beta.ageing-map.org/admin/>`_ is used. This is based at the `beta version site <http://beta.ageing-map.org>`_ and is the only way to add data to the database. **DO NOT** add any data directly to the live database *unless* you are fixing a critical issue and you have already changed the information on the curator.
+
+You usually add references and link them to a bibliographic entry through each databases dedicated section in the curator. This makes it much easier to keep track of entries being added and allows for the ID and basic details to be entered. 
+
+There are some minor issues with the GenAge Model Organisms section in that the longevity entries need to be added and saved **BEFORE** the references are added as it cannot detect the correct ID to use beforehand.
+
+Deploying
+^^^^^^^^^
+
+LibAge uses `Fabric <www.fabfile.org/>`_ to deploy both the versions and the data. The following commands are provided:
+
+deploy
+   Take a local copy of the data and deploy to the beta version.
+deploy_live
+   Take a local copy of the site and deploy to the live version. This requires a version number which is listed on both the bottom of the site and if you have pulled the entire repo, as tags. The version number sets a tag and must be incremented after every deploy, no matter the size.
+load_live_data
+   Export the beta version's database then deploy to the live version. This also takes a backup of the database before making any changes.
+rebuild_index
+   Rebuild the search indexes (needs to be run after references are added)
+repair_remote
+   Sometimes references are not correctly downloaded. This script runs through the **ENTIRE** database and updates the references within. This may take a while and therefore should be run only when absolutely necessary. The search indexes will need to be rebuilt after this is run.
+
+Server Configuration
+--------------------
+
+Live
+^^^^
+
+Upstart config
+   /etc/init/libage.conf
+Nginx config
+   /etc/nginx/sites-enabled/libage.ageing-map.org.conf
+Location
+   /srv/www/libage.ageing-map.org/
+Database
+   libage
+
+Beta
+^^^^
+
+Upstart file
+   /etc/init/libage-la.conf
+Nginx config
+   /etc/nginx/sites-enabled/la.ageing-map.org.conf
+Location
+   /srv/www/la.ageing-map.org/
+Database
+   la
+

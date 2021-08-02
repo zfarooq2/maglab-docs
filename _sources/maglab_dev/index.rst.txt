@@ -1,0 +1,21 @@
+.. Maglab Development Guide master file, created by
+   sphinx-quickstart on Tue Jul 29 10:16:38 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Maglab Development Guide
+========================
+
+This guide is aimed to help with getting set up with development environments and other information that helps with developing the various lab websites.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   overview
+   DAA/development
+   HAGR/development
+   LibAge/development
+   Genomics/development
+   General/index.rst

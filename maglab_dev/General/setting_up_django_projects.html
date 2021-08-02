@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Python Django Set-up &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maglab SysAdmin Guide" href="../../maglab_admin/index.html" />
+    <link rel="prev" title="Version Control" href="version_control.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab Development Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version_control.html">Version Control</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python Django Set-up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_admin/index.html">Maglab SysAdmin Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_admin/monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Python Django Set-up</a><ul>
+<li><a class="reference internal" href="#ide">IDE</a></li>
+<li><a class="reference internal" href="#setting-up">Setting up</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#run-the-application">Run the Application</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="version_control.html" title="Previous Chapter: Version Control"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Version Control</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../maglab_admin/index.html" title="Next Chapter: Maglab SysAdmin Guide"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Maglab SysAdmin Guide &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_dev/general/setting_up_django_projects.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="python-django-set-up">
+<span id="django-set-up"></span><h1>Python Django Set-up<a class="headerlink" href="#python-django-set-up" title="Permalink to this headline">¶</a></h1>
+<p>A number of the labs websites use a Python Django and Postgres stack. Here is a quick reference on setting up locally to develop these sites.</p>
+<div class="section" id="ide">
+<h2>IDE<a class="headerlink" href="#ide" title="Permalink to this headline">¶</a></h2>
+<p>I have been using LiClipse for development, it seems to provide quite good support for development in Python.
+However Eclipse and PyCharm are possibly the more widely used options generally speaking for Python development.</p>
+</div>
+<div class="section" id="setting-up">
+<h2>Setting up<a class="headerlink" href="#setting-up" title="Permalink to this headline">¶</a></h2>
+<p>The code can be downloaded from the labs main git repository into a new local directory using:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">NAME_OF_GIT_PROJECT</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>For more information on the Git repository click <cite>here</cite>.</p>
+<p>There are a few other steps that are required to get a working local copy.</p>
+<p>If you are not familiar with Python virtualenv and installing packages with pip, have a read here:</p>
+<p><a class="reference external" href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/">https://packaging.python.org/guides/installing-using-pip-and-virtualenv/</a></p>
+<p>You will need to set up a Python virtualenv in a directory called ‘env’:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="n">env</span>
+</pre></div>
+</div>
+<p>Then activate the new virtualenv directory by running:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">source</span> <span class="n">activate</span>
+</pre></div>
+</div>
+<p>Any new python packages will now be installed in the env directory, thus isolating them for the project.</p>
+<p>Install project dependencies using pip and the requirements.txt file:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There may be non-python library requirements (e.g. libXML) that you will be require to install before some of the python modules will work. Simply keep running the command below until all the errors are gone!</p>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>In the IDE, point a new Python project at your project folder (possibly under ‘preferences’).</p>
+<p>Configure the project preferences in the IDE to ensure it uses the version of python installed in the virtualenv.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Django uses a settings.py file to store various configuration options. As mentioned, you’ll need to change the database name, user and password. There are also a couple of places where directories, so these will need adjusting</p>
+</div>
+<div class="section" id="run-the-application">
+<h2>Run the Application<a class="headerlink" href="#run-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Django comes with it’s own basic webserver, for development I have used this by running the following command (create a new ‘run configuration’ in the IDE):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
+</pre></div>
+</div>
+<p>The above command needs to use the Python version that has been packaged up in the virtualenv directory, so you should have configured the IDE to point to this.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

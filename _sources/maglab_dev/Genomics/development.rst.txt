@@ -1,0 +1,28 @@
+Genome and Transcriptome Resources
+===================================
+
+This page covers development of Naked Mole rat, Bowhead Whale and Ocean Clam genome and transcriptome resources. 
+
+They are all very similar in terms of architecture, using Python Django and templating to server the HTML content. 
+
+Each also includes it's own BLAST installation for searching user entered sequences against the data.
+
+Development
+-----------
+
+Software
+^^^^^^^^
+
+The genome resources are a result of sequencing projects the lab has been involved with other institutions, resulting in portals to present the data 
+
+They all use Python Django with PostgreSQL.
+
+Setup
+^^^^^
+
+See setting up locally with Python Django 
+
+:doc:`django_set_up`
+
+Configuration
+^^^^^^^^^^^^^

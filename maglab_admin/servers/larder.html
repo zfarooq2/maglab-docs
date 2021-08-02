@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Larder &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Maglab" href="maglab.html" />
+    <link rel="prev" title="Winston" href="winston.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Larder</a><ul>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#location">Location</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="winston.html" title="Previous Chapter: Winston"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Winston</span>
+    </a>
+  </li>
+  <li>
+    <a href="maglab.html" title="Next Chapter: Maglab"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Maglab &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_admin/servers/larder.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="larder">
+<h1>Larder<a class="headerlink" href="#larder" title="Permalink to this headline">¶</a></h1>
+<p>Larder is a storage server and is only to be accessed by ordinary users through their home directories. No programs are to be run on it that are not related to its primary purpose as a storage machine. It uses a USB key to boot because GRUB was being awkward and this was the simplest and easiest solution. The key itself is attached to an internal USB port.</p>
+<p>The server exports a ZFS zpool called /larder/homes that stores the home directories of all of the servers.</p>
+<p>Unlike the other servers this is based in the CSD server room and therefore you will need to go to the CSD building if you have any issues.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Details</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">External IP Address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">138.253.197.190</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Internal IP Address:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">192.168.20.1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Tunnel IP:</th><td class="field-body">10.34.36.31</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Viglen built rack mount</li>
+<li>2 x Intel(R) Xeon(R) CPU E5-2603 v2 &#64; 1.80GHz (4 core)</li>
+<li>16GiB Memory</li>
+<li>66TiB disk space (28 disks + cache disk + os disk + boot disk)<ul>
+<li>42GB SSD RAID0 (pass-through) (/)</li>
+<li>4GB USB key (/boot)</li>
+<li>zpool 28x2TB RAID0 + 1 30GB L2ARC cache (/larder)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<img alt="Larder is located mid way up a rack in the CSD Server Room." src="../../_images/larder_location_map.png" />
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

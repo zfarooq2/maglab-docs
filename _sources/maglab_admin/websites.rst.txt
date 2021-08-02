@@ -1,0 +1,28 @@
+Websites
+========
+
+There are quite a few websites running off two of the servers in the group (at the max limit at the moment). These server various purposes; some are resources on ageing, some are related to genomes that the group is working on and some are to support the group.
+
+.. toctree::
+   :maxdepth: 2
+   
+   websites/daa
+   websites/hagr
+   websites/libage
+   websites/nmr
+   websites/bmy
+   websites/cryopreservation
+   websites/genefriends
+   websites/gitlab
+   websites/monitoring
+   
+General Operation
+-----------------
+
+If a website uses python it generally runs on a `uwsgi <http://uwsgi-docs.readthedocs.org/en/latest/>`_ server and is controlled through `Upstart <http://upstart.ubuntu.com/>`_ using the ``service`` command (e.g. ``sudo service nginx restart``).
+
+`Nginx <http://wiki.nginx.org/Main>`_ is used as the primary web server and sits in front of apache when it is required, passing things such as PHP to it. Nginx is lighter and faster than Apache, especially as most of the heavy lifting is done using Python and uWSGI. All servers that us it have the official repo added and pull updates from there as the version that ships with Ubuntu is often seriously out of date.
+
+Websites are stored in the ``/srv/www/`` folder. This differs from most people who put everything in ``/var/www/`` but ``/srv/`` is usually empty, used by no one and according to numerous locations is actually a valid location for files.
+
+Some websites use `Grunt <http://gruntjs.com/>`_ to preprocess files. This includes LESS and JS minification. The ``package.json`` file contains all the required dependencies and once grunt is installed you simply run ``npm install`` to set it up. 

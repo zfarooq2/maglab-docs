@@ -1,0 +1,46 @@
+Development Overview
+====================
+
+The main lab websites to be aware of:
+
+* The Digital Ageing Atlas `(DAA) <http://ageing-map.org/>`_
+* The Human Genomic Ageing Resources `(HAGR) <http://genomics.senescence.info/>`_
+* Genome Resources 
+    * `The Naked Mole Rat Genome resource <http://naked-mole-rat.org/>`_
+    * `The Bowhead Whale Genome resource <http://bowhead-whale.org/>`_
+    * `The Ocean Clam transcriptome <http://arctica-islandica.ageing-map.org/>`_
+ 
+In addition there are other websites such as the Crypreservation site (http://cryopreservation.org.uk/), ActiveSeti (http://active-seti.info/), as well as Pedro also has is own site with essays and other information on ageing (http://jp.senescence.info/). However these have not generally required regular maintenance.
+
+I have been using LiClipse to development all these sites (if not just a text editor!), although Eclipse or similar should be fine.
+
+The Human Genomic Ageing Resources
+----------------------------------
+
+HAGR receives the most development attention, as it's the most widely cited and the original website set up by Joao Pedro. It was created in 2004-2005 as just GenAge and AnAge, then more similar databases were added - GenDR, LongevityMap, DrugAge and CellAge.
+These are basically curated datasets that have been turned into a MySQL database then made available as a web application using PHP.
+Generally HAGR follows a similar pattern, there are folders within a PHP app for each resource e.g. 'cells' or 'drugs' for CellAge and DrugAge, respectively. There are not many shared functions in HAGR, each new resource tends to repeat code quite a bit. 
+
+There is a central hagr.css file and some shared Javascript, as well as a 'functions' directory - things have got a bit cumbersome and messy, therefore if any further common features are added we may want to consider the design. 
+
+Future Directions
+^^^^^^^^^^^^^^^^^
+
+There has been talk of migrating things to Django, that way the lab resources would be consistent and it would turn HAGR into something more structured.
+There has also been talk for the pending grant application to introduce more API features to HAGR, so as part of that it could be a could time to move to Django.
+
+From a technical point of view, HAGR is the only website that is based on PHP and is manually crafted together. It also uses MySQL, whereas the other lab websites developed since are using PostgreSQL and Python Django.
+
+The Digital Ageing Atlas
+------------------------
+
+The DAA has not received funding at the time of writing, and between 2015 and 2018, only received minimal development effort. 
+The DAA details changes that occur with age, at e.g. the molecular and physiological level. At present it includes human and mice data, with plans to integrate further data including rat.
+
+The DAA is based on Python Django, with a PostgreSQL database.
+
+Future Directions
+^^^^^^^^^^^^^^^^^
+
+A number of additional molecular changes have been identified from microarray data, so these will be incorporated into the DAA. However the design is likely to need to change to accommodate the data and to improve the user interface to browse the additional data.
+Until the DAA receives funding, this work is on hold.

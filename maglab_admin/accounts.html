@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>NIS and Accounts &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Websites" href="websites.html" />
+    <link rel="prev" title="Maglab2" href="servers/maglab2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">The Servers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">NIS and Accounts</a><ul>
+<li><a class="reference internal" href="#set-up">Set up</a></li>
+<li><a class="reference internal" href="#adding-a-user">Adding a user</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="servers/maglab2.html" title="Previous Chapter: Maglab2"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Maglab2</span>
+    </a>
+  </li>
+  <li>
+    <a href="websites.html" title="Next Chapter: Websites"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Websites &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/maglab_admin/accounts.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="nis-and-accounts">
+<h1>NIS and Accounts<a class="headerlink" href="#nis-and-accounts" title="Permalink to this headline">¶</a></h1>
+<p>The servers all use <a class="reference external" href="http://en.wikipedia.org/wiki/Network_Information_Service">NIS</a> to manage the user accounts. This means each server has the same users (mostly) and means you only need to add users in one place and rebuild to add users to all the servers.</p>
+<div class="section" id="set-up">
+<h2>Set up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
+<p>The master NIS server is Larder, with Alfred, Parker, Winston and Larder acting as clients.</p>
+<p>Larder is also the file server, so it’s pretty important - be careful when working on this server.</p>
+<p>The domain for NIS is <code class="docutils literal"><span class="pre">maglab</span></code>, and the server IP is <code class="docutils literal"><span class="pre">192.168.26.1</span></code>.</p>
+</div>
+<div class="section" id="adding-a-user">
+<h2>Adding a user<a class="headerlink" href="#adding-a-user" title="Permalink to this headline">¶</a></h2>
+<p>You can add a user to all of the servers by creating the new user on Larder and then <code class="docutils literal"><span class="pre">cd``ing</span> <span class="pre">to</span> <span class="pre">``/var/yp</span></code> and running <code class="docutils literal"><span class="pre">make</span></code> as a admin user. This will then propagate the new user to all of the servers. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="o">--</span><span class="n">home</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">nis</span><span class="o">/</span><span class="n">test_user</span> <span class="n">test_user</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes NIS is a pain (especially if a system is restarted) so the first thing to do is check the following:</p>
+<ul class="simple">
+<li>The firewall is not up on any of the systems (<code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">ufw</span> <span class="pre">stop</span></code>)</li>
+<li>Restart all of the daemons
+* <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">portmap</span> <span class="pre">restart</span></code>
+* <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">ypserv</span> <span class="pre">restart</span></code> (server only)
+* <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">ypbind</span> <span class="pre">restart</span></code></li>
+</ul>
+<p>If that doesn’t solve the issue, try a reboot or look on the web for any error messages that might have been shown.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

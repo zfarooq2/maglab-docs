@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Alfred &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Parker" href="parker.html" />
+    <link rel="prev" title="The Servers" href="../servers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Alfred</a><ul>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#services">Services</a></li>
+<li><a class="reference internal" href="#mounts">Mounts</a></li>
+<li><a class="reference internal" href="#ip-tables">IP Tables</a></li>
+<li><a class="reference internal" href="#websites">Websites</a></li>
+<li><a class="reference internal" href="#location">Location</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../servers.html" title="Previous Chapter: The Servers"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; The Servers</span>
+    </a>
+  </li>
+  <li>
+    <a href="parker.html" title="Next Chapter: Parker"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Parker &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_admin/servers/alfred.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="alfred">
+<h1>Alfred<a class="headerlink" href="#alfred" title="Permalink to this headline">¶</a></h1>
+<p>Alfred is the most important server in the group. It acts as a gateway to the other servers in the room and serves as the NIS server. It also hosts websites that require more database space or heavy lifting as well as some internal tools.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Details</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">External IP Address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">138.253.196.48</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Internal IP Address:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">192.168.26.1</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Domain Names(s):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li>alfred.liv.ac.uk (Primary)</li>
+<li>genefriends.org</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Tunnel IP:</th><td class="field-body"><p class="first last">10.34.36.32</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Viglen built tower</li>
+<li>2 x Intel(R) Xeon(R) CPU E5506  &#64; 2.13GHz (4 core)</li>
+<li>Ubuntu 14.04.5 LTS (trusty)</li>
+<li>24GiB Memory</li>
+<li>3.6TiB disk space (4 disks)<ul>
+<li>9.6mb GRUB</li>
+<li>md0: 1.8TiB RAID10 (/)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>NIS Server</li>
+<li>Webserver (nginx)</li>
+<li>Database server (PostgreSQL)</li>
+</ul>
+</div>
+<div class="section" id="mounts">
+<h2>Mounts<a class="headerlink" href="#mounts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>/base (larder:/larder/homes)</li>
+<li>/mnt/backup (deptbck2.liv.ac.uk:/stage/bio_maglab/alfred)</li>
+</ul>
+</div>
+<div class="section" id="ip-tables">
+<h2>IP Tables<a class="headerlink" href="#ip-tables" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Open TCP Ports:</th><td class="field-body">21, 22, 24, 25, 53, 80, 443, 465, 8085-8089</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Open UDP Ports:</th><td class="field-body">53</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">NAT:</th><td class="field-body">MASQUERADE on eth0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="websites">
+<h2>Websites<a class="headerlink" href="#websites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><span class="xref std std-doc">Server Guide</span>: <a class="reference external" href="http://alfred.liv.ac.uk/guide">http://alfred.liv.ac.uk/guide</a></li>
+<li><span class="xref std std-doc">GitLab</span>: <a class="reference external" href="http://alfred.liv.ac.uk/gitlab">http://alfred.liv.ac.uk/gitlab</a></li>
+<li><span class="xref std std-doc">GeneFriends</span>: <a class="reference external" href="http://genefriends.org">http://genefriends.org</a></li>
+<li><span class="xref std std-doc">Stats and monitoring</span> (ports 8086-8089): <a class="reference external" href="http://alfred.liv.ac.uk">http://alfred.liv.ac.uk</a></li>
+</ul>
+</div>
+<div class="section" id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
+<img alt="Alfred is located on the top shelf in the Life Sciences server room." src="../../_images/alfred_location_map.png" />
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

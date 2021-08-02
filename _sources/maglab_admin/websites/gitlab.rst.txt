@@ -1,0 +1,31 @@
+GitLab
+======
+
+Gitlab is the private Github-like server that allows for collaboration between different group members on projects that may not be open source on Github.
+
+.. sidebar:: Details
+
+   :Language: Mix
+   :Database: PostgreSQL
+   :Server: Alfred
+   :URL: http://alfred.liv.ac.uk/gitlab
+   :Developers: - GitLab
+
+History
+-------
+
+Some projects (mainly HAGR) required collaboration between other members. Git was already in use but when a more graphical interface was required Gitlab was used to pull these all into one easy to administer place.
+
+Server Configuration
+--------------------
+
+Because this runs on the root domain the configuration is in the main Alfred nginx configuration file.
+
+Upstart config
+   /etc/init.d/gitlab
+Nginx config
+   /etc/nginx/sites-enabled/alfred.conf
+Location
+   /home/git/
+Database
+   gitlabhq_production

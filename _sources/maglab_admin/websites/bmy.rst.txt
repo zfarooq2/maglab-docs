@@ -1,0 +1,47 @@
+Bowhead Whale Genome Resource
+=============================
+
+A custom genome portal built for the Bowhead whale genome.
+
+.. sidebar:: Details
+
+   :Language: Python 2
+   :Database: PostgreSQL
+   :Server: Maglab2
+   :URL: http://bowhead-whale.org
+   :Git: git@alfred.liv.ac.uk:thomas/bowhead-whale-portal.git
+   :Developers: - Thomas Craig
+
+History
+-------
+
+A portal that was originally based on the Naked mole-rat portal, though it has diverged in a number of places as it does not need to support the same levels of information. It also has a database backed genome browser, unlike the NMR portal which uses static files.
+
+Procedures
+----------
+
+Adding Data
+^^^^^^^^^^^
+
+There are import management command functions that are defined in the bowhead whale portal documentation. Some data will require reloading the entire database if affects the underlying sequences.
+
+Deploying
+^^^^^^^^^
+
+Ensure that the new version has been pushed upstream. You can then log on to the server and pull the new version into the directly. Simply restart to complete the update.
+
+The bowhead whale portal also has a BLAST server that operates as a separate application. The pyBLAST application is installed by pip from git repo. This allows easy updates, simply call pip install pyblast --upgrade to update.
+
+Server Configuration
+--------------------
+
+Upstart config
+   /etc/init/bhw.conf
+   /etc/init/bhw_blast.conf
+Nginx config
+   /etc/nginx/sites-enabled/bowhead-whale.org.conf
+Location
+   /srv/www/bowhead-whale.org/
+Database
+   bowheadwhale
+

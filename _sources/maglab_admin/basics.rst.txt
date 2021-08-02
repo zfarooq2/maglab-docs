@@ -1,0 +1,60 @@
+SysAdmin basics
+===============
+
+This section of the guide with give a brief overview of common sysadmin topics such as logging on, restarting applications etc. This not only will help you get up to speed it will also give an insight into how everything is run. 
+
+Logging on
+----------
+
+All of the servers are accessed through SSH. There are no external controls panels, everything is done at the command line.
+
+Alfred, Parker and Winston
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can only log onto Parker and Winston through Alfred. This is because there is only a single network connection between them with Alfred acting as the gateway. First, log onto Alfred::
+
+   ssh username@alfred.liv.ac.uk
+
+Then you can log onto any of the other servers using the hostname e.g.::
+
+   ssh parker
+
+Larder
+^^^^^^
+
+There are two routes to larder, you can either log on via direct ip address (see :doc:`servers/larder`) or by logging on to Alfred and using the hostname::
+    
+   ssh larder
+
+Maglab and Maglab2
+^^^^^^^^^^^^^^^^^^
+
+The Maglab external server(s) can be logged on via any of the domain names associated with it e.g.::
+
+   ssh username@ageing-map.org
+
+Starting/restarting services
+----------------------------
+
+All of the services and python-based websites are controlled by upstart. This allows adminsitrators to quickly start and restart services based on their name.
+
+The configuration for these services is stored in ``/etc/init/`` or ``/etc/init.d/``. See the :doc:`websites` documentation for more details of configuration file locations.
+
+To restart a service you need to know its name. The service name is the same as the name of the configuration file that controls it so a file at ``/etc/init/daa.conf`` would lead to a service named ``daa``. You can then use the ``services`` command to start/stop/restart::
+
+   sudo service daa restart
+
+You are required to have sudo permissions to run the command otherwise nothing will happen.
+
+Adding/deleting users
+---------------------
+
+All of the servers use Ubuntu so searching for adding users should provide you with detailed documentation. The basics are as follows:
+
+Add a user (with a home directory on Larder): ``sudo adduser --home /base/username username``
+
+Delete a user: ``sudo userdel username``
+
+If you are using Alfred, Parker or Winston please see the :doc:`accounts` documentation as this requires more than just adding/deleting a user.
+
+Normally users are added to Larder, as this is the NIS master server so the user will then propogate to alfred, parker and winston.

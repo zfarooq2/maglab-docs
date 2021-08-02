@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Human Ageing Genomic Resources (HAGR) &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LibAge" href="libage.html" />
+    <link rel="prev" title="The Digital Ageing Atlas" href="daa.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Human Ageing Genomic Resources (HAGR)</a><ul>
+<li><a class="reference internal" href="#history">History</a></li>
+<li><a class="reference internal" href="#versions">Versions</a></li>
+<li><a class="reference internal" href="#referencing">Referencing</a></li>
+<li><a class="reference internal" href="#procedures">Procedures</a><ul>
+<li><a class="reference internal" href="#adding-data">Adding Data</a></li>
+<li><a class="reference internal" href="#deploying">Deploying</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#server-configuration">Server Configuration</a><ul>
+<li><a class="reference internal" href="#beta">Beta</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="daa.html" title="Previous Chapter: The Digital Ageing Atlas"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; The Digital A...</span>
+    </a>
+  </li>
+  <li>
+    <a href="libage.html" title="Next Chapter: LibAge"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">LibAge &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_admin/websites/hagr.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="human-ageing-genomic-resources-hagr">
+<h1>Human Ageing Genomic Resources (HAGR)<a class="headerlink" href="#human-ageing-genomic-resources-hagr" title="Permalink to this headline">¶</a></h1>
+<p>The Human Ageing Genomic Resources (HAGR) is a collection of databases and tools designed to help researchers study the genetics of human ageing using modern approaches such as functional genomics, network analyses, systems biology and evolutionary analyses.</p>
+<p>HAGR databases:</p>
+<dl class="docutils">
+<dt>Gene databases</dt>
+<dd><ul class="first last simple">
+<li>GenAge Human (human ageing-related genes)</li>
+<li>GenAge Models (model organism ageing-related genes)</li>
+<li>GenDR (a database of genes in mammals and model organisms associated with dietary restriction)</li>
+<li>LongevityMap (a database of human genetic variants associated with longevity)</li>
+<li>CellAge (a database of genes associated with human cell senescence in vitro)</li>
+</ul>
+</dd>
+<dt>Drug databases</dt>
+<dd><ul class="first last simple">
+<li>DrugAge (a database of drugs associated with increased lifespan in model organisms)</li>
+</ul>
+</dd>
+<dt>Animal longevity databases</dt>
+<dd><ul class="first last simple">
+<li>AnAge (a database of animal longevity and ageing records)</li>
+</ul>
+</dd>
+</dl>
+<p>In additon, the HAGR website also links out to the Digital Ageing Atlas (DAA), the Bowhead whale genome and Naked mole rat genome resources.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Details</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Language:</th><td class="field-body"><p class="first">PHP</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Database:</th><td class="field-body"><p class="first">MySQL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Server:</th><td class="field-body"><p class="first">Maglab/Pedro’s personal server</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">URL:</th><td class="field-body"><p class="first"><a class="reference external" href="http://hagr.ageing-map.org">http://hagr.ageing-map.org</a> (beta) <em>or</em> <a class="reference external" href="http://genomics.senescence.info/">http://genomics.senescence.info/</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Git:</th><td class="field-body"><p class="first"><a class="reference external" href="mailto:git&#37;&#52;&#48;alfred&#46;liv&#46;ac&#46;uk">git<span>&#64;</span>alfred<span>&#46;</span>liv<span>&#46;</span>ac<span>&#46;</span>uk</a>:thomas/hagr.git</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Developers:</th><td class="field-body"><ul class="first last simple">
+<li>Thomas Craig</li>
+<li>João Pedro de Magalhães</li>
+<li>Daniel Thornton</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>Initially developed by Pedro it has been extensively changed with the entire site getting a new look and more databases being added.</p>
+</div>
+<div class="section" id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>There are two versions of HAGR: one on the Maglab server used for testing by others in the group and previewing changes and Pedro’s own server where the live version is hosted. Pedro is in charge of deploying to this server so all testing needs to be done before it goes live.</p>
+</div>
+<div class="section" id="referencing">
+<h2>Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h2>
+<p>Some HAGR databases (GenAge, GenDR, CellAge, DrugAge and LongevityMap) use <a class="reference internal" href="libage.html"><span class="doc">LibAge</span></a> to provide referencing. This is built into the curator so it should be seamless. The references are added to the beta version of LibAge so when a new version of HAGR is deployed the new version of LibAge also needs to be deployed, which Pedro carries out. We are in the process of migrating references across to LibAge for all databases, rather than store them locally in HAGR.</p>
+</div>
+<div class="section" id="procedures">
+<h2>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-data">
+<h3>Adding Data<a class="headerlink" href="#adding-data" title="Permalink to this headline">¶</a></h3>
+<p>To add new data the <a class="reference external" href="http://beta.ageing-map.org/admin/">curator</a> is used. This is based at the <a class="reference external" href="http://beta.ageing-map.org">beta version site</a> and is the only way to add data to the database. <strong>DO NOT</strong> add any data directly to the live database <em>unless</em> you are fixing a critical issue and you have already changed the information on the curator.</p>
+<p>All of the databases in HAGR use the curator and can be set so only certain users have access, allowing different people to work only on the databases they need to.</p>
+</div>
+<div class="section" id="deploying">
+<h3>Deploying<a class="headerlink" href="#deploying" title="Permalink to this headline">¶</a></h3>
+<p>Because of the setup of HAGR deploying to the beta (<a class="reference external" href="http://hagr.ageing-map.org">http://hagr.ageing-map.org</a>) is simply a matter of pushing to the Git repository, logging on to the server and pulling the new changes. Providing that no config has been changed this should present no issues.</p>
+</div>
+</div>
+<div class="section" id="server-configuration">
+<h2>Server Configuration<a class="headerlink" href="#server-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="beta">
+<h3>Beta<a class="headerlink" href="#beta" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Nginx config</dt>
+<dd>/etc/nginx/sites-enabled/hagr.ageing-map.org.conf</dd>
+<dt>Apache config</dt>
+<dd>/etc/apache2/sites-enabled/hagr.ageing-map.org</dd>
+<dt>Location</dt>
+<dd>/srv/www/hagr.ageing-map.org/</dd>
+<dt>Databases</dt>
+<dd><ul class="first last simple">
+<li>dev_anage</li>
+<li>dev_genage_human</li>
+<li>dev_genage_models</li>
+<li>dev_gendr</li>
+<li>dev_longevity</li>
+<li>dev_orthologs</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

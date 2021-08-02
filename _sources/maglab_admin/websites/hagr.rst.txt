@@ -1,0 +1,81 @@
+Human Ageing Genomic Resources (HAGR)
+=====================================
+
+The Human Ageing Genomic Resources (HAGR) is a collection of databases and tools designed to help researchers study the genetics of human ageing using modern approaches such as functional genomics, network analyses, systems biology and evolutionary analyses.
+
+HAGR databases:
+
+Gene databases
+   * GenAge Human (human ageing-related genes)
+   * GenAge Models (model organism ageing-related genes)
+   * GenDR (a database of genes in mammals and model organisms associated with dietary restriction)
+   * LongevityMap (a database of human genetic variants associated with longevity)
+   * CellAge (a database of genes associated with human cell senescence in vitro)
+Drug databases
+   * DrugAge (a database of drugs associated with increased lifespan in model organisms) 
+Animal longevity databases
+   * AnAge (a database of animal longevity and ageing records)
+
+In additon, the HAGR website also links out to the Digital Ageing Atlas (DAA), the Bowhead whale genome and Naked mole rat genome resources.
+
+.. sidebar:: Details
+
+   :Language: PHP
+   :Database: MySQL
+   :Server: Maglab/Pedro's personal server
+   :URL: http://hagr.ageing-map.org (beta) *or* http://genomics.senescence.info/
+   :Git: git@alfred.liv.ac.uk:thomas/hagr.git
+   :Developers: - Thomas Craig
+                - João Pedro de Magalhães
+                - Daniel Thornton
+
+History
+-------
+
+Initially developed by Pedro it has been extensively changed with the entire site getting a new look and more databases being added.
+
+Versions
+--------
+
+There are two versions of HAGR: one on the Maglab server used for testing by others in the group and previewing changes and Pedro's own server where the live version is hosted. Pedro is in charge of deploying to this server so all testing needs to be done before it goes live.
+
+Referencing
+-----------
+
+Some HAGR databases (GenAge, GenDR, CellAge, DrugAge and LongevityMap) use :doc:`LibAge <libage>` to provide referencing. This is built into the curator so it should be seamless. The references are added to the beta version of LibAge so when a new version of HAGR is deployed the new version of LibAge also needs to be deployed, which Pedro carries out. We are in the process of migrating references across to LibAge for all databases, rather than store them locally in HAGR.
+
+Procedures
+----------
+
+Adding Data
+^^^^^^^^^^^
+
+To add new data the `curator <http://beta.ageing-map.org/admin/>`_ is used. This is based at the `beta version site <http://beta.ageing-map.org>`_ and is the only way to add data to the database. **DO NOT** add any data directly to the live database *unless* you are fixing a critical issue and you have already changed the information on the curator.
+
+All of the databases in HAGR use the curator and can be set so only certain users have access, allowing different people to work only on the databases they need to.
+
+Deploying
+^^^^^^^^^
+
+Because of the setup of HAGR deploying to the beta (http://hagr.ageing-map.org) is simply a matter of pushing to the Git repository, logging on to the server and pulling the new changes. Providing that no config has been changed this should present no issues.
+
+Server Configuration
+--------------------
+
+Beta
+^^^^
+
+Nginx config
+   /etc/nginx/sites-enabled/hagr.ageing-map.org.conf
+Apache config
+   /etc/apache2/sites-enabled/hagr.ageing-map.org
+Location
+   /srv/www/hagr.ageing-map.org/
+Databases
+   * dev_anage
+   * dev_genage_human
+   * dev_genage_models
+   * dev_gendr
+   * dev_longevity
+   * dev_orthologs
+

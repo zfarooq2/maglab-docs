@@ -1,0 +1,57 @@
+Maglab2
+=======
+
+The Maglab2 server was purchased to take the load off Alfred, moving the genome portals to a better home.
+
+.. sidebar:: Details
+
+   :External IP Address: 176.58.127.67 
+   :Domain Names(s): - naked-mole-rat.org
+                     - bowhead-whale.org
+
+Specifications
+---------------
+
+* Linode VPS
+* Intel(R) Xeon(R) CPU L5520  @ 2.27GHz (2 core)
+* Ubuntu 12.04.5 LTS (precise)
+* 2GiB Memory
+* 49GB disk space (auto partitioned by Linode)
+  
+Services
+--------
+
+* DNS (provided by Linode control panel really)
+* Webserver (nginx)
+* Database server (PostgreSQL)
+* Search server (elasticsearch)
+
+IP Tables
+---------
+
+:Open TCP Ports: 21, 22, 25, 53, 80, 443, 465, 8080, 10050
+:Open UDP Ports: 53
+
+Websites
+--------
+
+* :doc:`Naked mole-rat </websites/nmr>`: http://naked-mole-rat.org
+* :doc:`Bowhead whale </websites/bmy>`: http://bowhead-whale.org
+
+Location
+--------
+
+Linode facility, London
+
+Billing
+-------
+
+The Server is automatically re-billed every year. Depending on the status of the university credit card on the account (it regularly changes) you will either have to:
+
+* If the credit card is still active you will need to fill in a order requisition form and have that signed by Pedro, then take it to the finance office to have it logged on their system.
+* If the credit card has expired you will need to do the same as above, but this time you will need to have the finance office change the card on the account (you will be required to log in and show them what to change).
+
+Using the Linode control panel
+------------------------------
+
+Linode provides a control panel for managing the billing, DNS and status of the servers on that account. You can log on to this at the following address: https://manager.linode.com/linodes. 

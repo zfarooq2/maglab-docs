@@ -1,0 +1,33 @@
+GeneFriends
+===========
+
+GeneFriends employs a RNAseq based gene co-expression network for candidate gene prioritization, based on a seed list of genes, and for functional annotation of unknown genes in humans.
+
+.. note::
+   Sipko Van Dam develops and deploys this application. Help is only required when there are configuration issues.
+
+.. sidebar:: Details
+
+   :Language: Python 2
+   :Database: PostgreSQL
+   :Server: Alfred
+   :URL: http://genefriends.org
+   :Developers: - Sipko Van Dam
+
+History
+-------
+
+Originally designed to use microarray data the site now uses RNASeq. Developed by Sipko he is in sole control of the code.
+
+Server Configuration
+--------------------
+
+Upstart config
+   /etc/init/genefriends.conf
+Nginx config
+   /etc/nginx/sites-enabled/genefriends.org.conf
+Location
+   /srv/www/genefriends.org/
+Database
+   genefriends
+

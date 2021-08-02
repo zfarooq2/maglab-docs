@@ -1,0 +1,7 @@
+Version Control
+===============
+
+In terms of version control, the lab maintains our own GitLab installation on the alfred server. To access the web site, go to http://alfred.liv.ac.uk/gitlab/
+
+You will need a username and login creating, to do so email: aging@liv.ac.uk
+

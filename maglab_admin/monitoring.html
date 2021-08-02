@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Server Monitoring &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Maglab Development Guide" href="../maglab_dev/index.html" />
+    <link rel="prev" title="GitLab" href="websites/gitlab.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="websites.html">Websites</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Server Monitoring</a><ul>
+<li><a class="reference internal" href="#the-core">The Core</a><ul>
+<li><a class="reference internal" href="#dashboard">Dashboard</a></li>
+<li><a class="reference internal" href="#graphite">Graphite</a></li>
+<li><a class="reference internal" href="#rabbitmq">RabbitMQ</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#graphing">Graphing</a><ul>
+<li><a class="reference internal" href="#grafana">Grafana</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="websites/gitlab.html" title="Previous Chapter: GitLab"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; GitLab</span>
+    </a>
+  </li>
+  <li>
+    <a href="../maglab_dev/index.html" title="Next Chapter: Maglab Development Guide"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Maglab Develo... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/maglab_admin/monitoring.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="server-monitoring">
+<h1>Server Monitoring<a class="headerlink" href="#server-monitoring" title="Permalink to this headline">¶</a></h1>
+<p>There are multiple different systems that work together to support basic monitoring and metrics on across the servers. The server aspects all run on Alfred and take in data from clients on each of the systems.</p>
+<div class="section" id="the-core">
+<h2>The Core<a class="headerlink" href="#the-core" title="Permalink to this headline">¶</a></h2>
+<p>The core system runs on using Sensu, an open source monitoring system. It is spread over multiple daemons and systems as defined below:</p>
+<div class="section" id="dashboard">
+<h3>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Port:</th><td class="field-body">8085</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Password protected:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Yes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Service:</th><td class="field-body">/etc/init.d/uchiwa</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Configuration:</th><td class="field-body">/etc/sensu/uciwa.json</td>
+</tr>
+</tbody>
+</table>
+<p>This display all the alerts and statuses of the servers. Anything that has been identified as a problem is shown here.</p>
+</div>
+<div class="section" id="graphite">
+<h3>Graphite<a class="headerlink" href="#graphite" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Port:</th><td class="field-body">8086</td>
+</tr>
+<tr class="field-even field"><th class="field-name">API port:</th><td class="field-body">2003</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Service:</th><td class="field-body">/etc/init.d/graphite-carbon.conf</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Configuration:</th><td class="field-body">/opt/graphite/conf/carbon.conf</td>
+</tr>
+</tbody>
+</table>
+<p>Handles the storage and display of server metrics. Graphs aren’t pretty or easy to deal with so an alternative graphing system is used.</p>
+</div>
+<div class="section" id="rabbitmq">
+<h3>RabbitMQ<a class="headerlink" href="#rabbitmq" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Port:</th><td class="field-body">8087</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Service:</th><td class="field-body">/etc/init.d/rabbitmq-server</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Configuration:</th><td class="field-body">/etc/rabbitmq/rabbitmq.config</td>
+</tr>
+</tbody>
+</table>
+<p>This is the queue manager that handles the output from the various client servers so needs to be internet accessible. All of the connections are protected through SSL.</p>
+</div>
+</div>
+<div class="section" id="graphing">
+<h2>Graphing<a class="headerlink" href="#graphing" title="Permalink to this headline">¶</a></h2>
+<p>Although the Graphite service does provide graphing capabilities these are not easy to use or very nice to look at.</p>
+<div class="section" id="grafana">
+<h3>Grafana<a class="headerlink" href="#grafana" title="Permalink to this headline">¶</a></h3>
+<p>The Grafana website contains an overview of all of the servers key metrics as well as more detailed dashboards covering these, along with others, in more detail. It is a javascript powered website so settings are kept in Nginx and in some configuration files in the directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Port:</th><td class="field-body">8088</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Configuration:</th><td class="field-body">/srv/www/grafana/config.js</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Nginx Configuration:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">/etc/nginx/sites-available/grafana.conf</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

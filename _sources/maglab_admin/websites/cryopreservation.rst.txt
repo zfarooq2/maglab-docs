@@ -1,0 +1,38 @@
+Cryopreservation
+================
+
+A simple website describing cryopreservation research conducted within the lab.
+
+.. sidebar:: Details
+
+   :Language: Jade
+   :Server: Maglab
+   :URL: http://cryopreservation.org.uk
+   :Git: git@alfred.liv.ac.uk:thomas/cryopreservation-website.git
+   :Developers: - Thomas Craig
+
+Procedures
+----------
+
+Deploying
+^^^^^^^^^
+
+Simply upload to the server, replacing existing files.
+
+
+Development
+-----------
+
+Setting up
+^^^^^^^^^^
+
+Download and test using ``python -m SimpleHTTPServer`` in the cryopreservation directory.
+
+Server Configuration
+--------------------
+
+Nginx config
+   /etc/nginx/sites-enabled/cryopreservation.org.uk
+Location
+   /srv/www/cryopreservation.org.uk/
+

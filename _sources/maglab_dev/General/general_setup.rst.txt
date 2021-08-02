@@ -1,0 +1,41 @@
+Apache Installation (Mac)
+=========================
+
+Enable Apache
+——————————---
+
+From the command line::
+
+  apachectl start
+  cd /etc/apache2/
+  sudo cp httpd.conf httpd.conf.bak
+
+edit the httpd.conf file and uncomment the bit about LoadModule
+
+Update the following directives including the location where your checked-out HAGR::
+
+    ServerAdmin YOUR_EMAIL_ADDRESS
+    ServerName hagr.ageing-map.org:8080
+    DocumentRoot "/Users/YOUR_USERNAME/workspace/hagr"
+    ErrorLog /Users/YOUR_USERNAME/workspace/hagr/error.log
+    CustomLog /Users/YOUR_USERNAME/workspace/hagr/access.log combined
+
+Also within the <Directory> directive, change the value::
+
+  AllowOverride None
+
+  to
+
+  AllowOverride All
+
+  e.g.
+  <Directory />
+    AllowOverride All
+    Require all granted
+  </Directory>
+  
+Apache runs on port 8080 by default, so the app should be available at http://localhost:8080
+
+Apache can be restarted with::
+
+  sudo apachectl restart

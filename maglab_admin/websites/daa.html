@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Digital Ageing Atlas &#8212; Maglab Admin and Development Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Human Ageing Genomic Resources (HAGR)" href="hagr.html" />
+    <link rel="prev" title="Websites" href="../websites.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Maglab Admin and Development Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Maglab SysAdmin Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">SysAdmin basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servers.html">The Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts.html">NIS and Accounts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../websites.html">Websites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring.html">Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maglab_dev/index.html">Maglab Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/overview.html">Development Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/DAA/development.html">The Digital Ageing Atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/HAGR/development.html">HAGR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/LibAge/development.html">LibAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/Genomics/development.html">Genome and Transcriptome Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/general_setup.html">Apache Installation (Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/mysql.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/setting_up_django_projects.html">Python Django Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maglab_dev/General/version_control.html">Version Control</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">The Digital Ageing Atlas</a><ul>
+<li><a class="reference internal" href="#history">History</a></li>
+<li><a class="reference internal" href="#versions">Versions</a></li>
+<li><a class="reference internal" href="#referencing">Referencing</a></li>
+<li><a class="reference internal" href="#procedures">Procedures</a><ul>
+<li><a class="reference internal" href="#adding-data">Adding Data</a></li>
+<li><a class="reference internal" href="#deploying">Deploying</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#server-configuration">Server Configuration</a><ul>
+<li><a class="reference internal" href="#live">Live</a></li>
+<li><a class="reference internal" href="#beta">Beta</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../websites.html" title="Previous Chapter: Websites"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Websites</span>
+    </a>
+  </li>
+  <li>
+    <a href="hagr.html" title="Next Chapter: Human Ageing Genomic Resources (HAGR)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Human Ageing ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/maglab_admin/websites/daa.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="the-digital-ageing-atlas">
+<h1>The Digital Ageing Atlas<a class="headerlink" href="#the-digital-ageing-atlas" title="Permalink to this headline">¶</a></h1>
+<p>The Digital Ageing Atlas (DAA) is a portal of age-related changes covering different biological levels. It integrates molecular, physiological, psychological and pathological age-related data to create an interactive portal that serves as the first centralised collection of human ageing changes and pathologies.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Details</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Language:</th><td class="field-body"><p class="first">Python 2</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Database:</th><td class="field-body"><p class="first">PostgreSQL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Server:</th><td class="field-body"><p class="first">Maglab</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">URL:</th><td class="field-body"><p class="first"><a class="reference external" href="http://ageing-map.org">http://ageing-map.org</a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Git:</th><td class="field-body"><p class="first"><a class="reference external" href="mailto:git&#37;&#52;&#48;alfred&#46;liv&#46;ac&#46;uk">git<span>&#64;</span>alfred<span>&#46;</span>liv<span>&#46;</span>ac<span>&#46;</span>uk</a>:thomas/the-digital-ageing-atlas.git</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Developers:</th><td class="field-body"><ul class="first last simple">
+<li>Thomas Craig</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>The DAA initially started off as a PHP application but was then converted to a Python based application when it was realised that the code was becoming unworkable. It has had quite a fluid development as initial decisions about the database schema and categorisations did not hold up under real world use.</p>
+</div>
+<div class="section" id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>The DAA has two versions: A live and a beta. These use separate databases with changes from the beta being moved to the live version once reviewed.</p>
+<p>The beta version has an admin section (based on the Django admin) that allows the addition of new data not just to the DAA but also to other HAGR databases. This admin section is more often known as the <a class="reference external" href="http://beta.ageing-map.org/admin/">curator</a> in the lab. Users of the curator site can be specified access to only certain databases allowing different people to access different levels of editing.</p>
+</div>
+<div class="section" id="referencing">
+<h2>Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h2>
+<p>The DAA uses <a class="reference internal" href="libage.html"><span class="doc">LibAge</span></a> to provide referencing. This is built into the curator so it should be seamless. The references are added to the beta version of LibAge so when a new version of the DAA is deployed the new version of LibAge also needs to be deployed.</p>
+</div>
+<div class="section" id="procedures">
+<h2>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-data">
+<h3>Adding Data<a class="headerlink" href="#adding-data" title="Permalink to this headline">¶</a></h3>
+<p>To add a new change the <a class="reference external" href="http://beta.ageing-map.org/admin/">curator</a> is used. This is based at the <a class="reference external" href="http://beta.ageing-map.org">beta version site</a> and is the only way to add data to the database. <strong>DO NOT</strong> add any data directly to the live database <em>unless</em> you are fixing a critical issue and you have already changed the information on the curator.</p>
+<p>Changes can be marked as hidden and although they will be displayed on the beta version (with a warning) when exported they will be ignored and not imported into the live version.</p>
+<p>You can also bulk add changes using a CSV file, the structure of which is provided in the curator.</p>
+</div>
+<div class="section" id="deploying">
+<h3>Deploying<a class="headerlink" href="#deploying" title="Permalink to this headline">¶</a></h3>
+<p>The DAA uses <a class="reference external" href="www.fabfile.org/">Fabric</a> to deploy both the versions and the data. The following commands are provided:</p>
+<dl class="docutils">
+<dt>deploy</dt>
+<dd>Take a local copy of the data and deploy to the beta version.</dd>
+<dt>deploy_live</dt>
+<dd>Take a local copy of the site and deploy to the live version. This requires a version number which is listed on both the bottom of the site and if you have pulled the entire repo, as tags. The version number sets a tag and must be incremented after every deploy, no matter the size.</dd>
+<dt>reload_live_data</dt>
+<dd>Export the beta version’s database (cleaning it and removing any hidden changes) then deploy to the live version. This also takes a backup of the database before making any changes.</dd>
+</dl>
+<p>When deploying the data to the live database an automatic backup is taken and stored in the deploy_backups folder.</p>
+</div>
+</div>
+<div class="section" id="server-configuration">
+<h2>Server Configuration<a class="headerlink" href="#server-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="live">
+<h3>Live<a class="headerlink" href="#live" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Upstart config</dt>
+<dd>/etc/init/daa.conf</dd>
+<dt>Nginx config</dt>
+<dd>/etc/nginx/sites-enabled/ageing-map.org.conf</dd>
+<dt>Location</dt>
+<dd>/srv/www/ageing-map.org/</dd>
+<dt>Database</dt>
+<dd>daa</dd>
+</dl>
+</div>
+<div class="section" id="beta">
+<h3>Beta<a class="headerlink" href="#beta" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Upstart file</dt>
+<dd>/etc/init/daa_beta.conf</dd>
+<dt>Nginx config</dt>
+<dd>/etc/nginx/sites-enabled/beta.ageing-map.org.conf</dd>
+<dt>Location</dt>
+<dd>/srv/www/beta.ageing-map.org/</dd>
+<dt>Database</dt>
+<dd>beta_daa</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Daniel Thornton.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

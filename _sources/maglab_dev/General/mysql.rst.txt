@@ -1,0 +1,48 @@
+MySQL & HAGR
+============
+
+MySQL can be downloaded here:
+
+https://dev.mysql.com/downloads/mysql/
+
+(note the root password during installation) 
+
+Take an export of the database from the beta site. To do this logon to the test beta site::
+
+  ssh admin@ageing-map.org
+
+Create a suitable directory e.g. ~/exports to store the exported MySQL data::
+
+  cd ~/exports
+  mysqldump -u hagr_beta -p dev_genage_human > dev_genage_human.sql --lock-tables=false
+  mysqldump -u hagr_beta -p dev_anage > dev_anage.sql --lock-tables=false
+  mysqldump -u hagr_beta -p dev_genage_models > dev_genage_models.sql --lock-tables=false
+  mysqldump -u hagr_beta -p dev_gendr > dev_gendr.sql --lock-tables=false
+  mysqldump -u hagr_beta -p dev_longevity > dev_longevity.sql --lock-tables=false
+  mysqldump -u hagr_beta -p dev_orthologs > dev_orthologs.sql --lock-tables=false
+
+Transfer the above data across to your local environment.
+
+Log on to MySQL locally using::
+
+  $  mysql -u root -p
+
+Which will then prompt for the root password
+
+Next create the databases::
+
+  CREATE DATABASE dev_genage_human;
+  CREATE DATABASE dev_anage;
+  CREATE DATABASE dev_genage_models;
+  CREATE DATABASE dev_gendr;
+  CREATE DATABASE dev_orthologs;
+  CREATE DATABASE dev_longevity;
+
+Then load the data using the SQL dump files taken earlier from the beta site e.g.::
+
+  mysql -u root -p -h localhost dev_genage_human < dev_genage_human.sql 
+  mysql -u root -p -h localhost dev_anage < dev_anage.sql
+  mysql -u root -p -h localhost dev_genage_models < dev_genage_models.sql
+  mysql -u root -p -h localhost dev_gendr < dev_gendr.sql
+  mysql -u root -p -h localhost dev_longevity < dev_longevity.sql
+  mysql -u root -p -h localhost dev_orthologs < dev_orthologs.sql

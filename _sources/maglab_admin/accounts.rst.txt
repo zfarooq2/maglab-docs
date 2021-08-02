@@ -1,0 +1,33 @@
+NIS and Accounts
+================
+
+The servers all use `NIS <http://en.wikipedia.org/wiki/Network_Information_Service>`_ to manage the user accounts. This means each server has the same users (mostly) and means you only need to add users in one place and rebuild to add users to all the servers.
+
+Set up
+------
+
+The master NIS server is Larder, with Alfred, Parker, Winston and Larder acting as clients.
+
+Larder is also the file server, so it's pretty important - be careful when working on this server.
+
+The domain for NIS is ``maglab``, and the server IP is ``192.168.26.1``.
+
+Adding a user
+-------------
+
+You can add a user to all of the servers by creating the new user on Larder and then ``cd``ing to ``/var/yp`` and running ``make`` as a admin user. This will then propagate the new user to all of the servers. For example::
+
+   sudo adduser --home /home/nis/test_user test_user
+   
+Troubleshooting
+---------------
+
+Sometimes NIS is a pain (especially if a system is restarted) so the first thing to do is check the following:
+
+* The firewall is not up on any of the systems (``sudo service ufw stop``)
+* Restart all of the daemons
+  * ``sudo service portmap restart``
+  * ``sudo service ypserv restart`` (server only)
+  * ``sudo service ypbind restart``
+  
+If that doesn't solve the issue, try a reboot or look on the web for any error messages that might have been shown.

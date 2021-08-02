@@ -1,0 +1,85 @@
+The Digital Ageing Atlas
+========================
+
+The Digital Ageing Atlas (DAA) is a portal of age-related changes covering different biological levels. It integrates molecular, physiological, psychological and pathological age-related data to create an interactive portal that serves as the first centralised collection of human ageing changes and pathologies.
+
+.. sidebar:: Details
+
+   :Language: Python 2
+   :Database: PostgreSQL
+   :Server: Maglab
+   :URL: http://ageing-map.org
+   :Git: git@alfred.liv.ac.uk:thomas/the-digital-ageing-atlas.git
+   :Developers: - Thomas Craig
+
+History
+-------
+
+The DAA initially started off as a PHP application but was then converted to a Python based application when it was realised that the code was becoming unworkable. It has had quite a fluid development as initial decisions about the database schema and categorisations did not hold up under real world use.
+
+Versions
+--------
+
+The DAA has two versions: A live and a beta. These use separate databases with changes from the beta being moved to the live version once reviewed.
+
+The beta version has an admin section (based on the Django admin) that allows the addition of new data not just to the DAA but also to other HAGR databases. This admin section is more often known as the `curator <http://beta.ageing-map.org/admin/>`_ in the lab. Users of the curator site can be specified access to only certain databases allowing different people to access different levels of editing.
+
+Referencing
+-----------
+
+The DAA uses :doc:`LibAge <libage>` to provide referencing. This is built into the curator so it should be seamless. The references are added to the beta version of LibAge so when a new version of the DAA is deployed the new version of LibAge also needs to be deployed.
+
+Procedures
+----------
+
+Adding Data
+^^^^^^^^^^^
+
+To add a new change the `curator <http://beta.ageing-map.org/admin/>`_ is used. This is based at the `beta version site <http://beta.ageing-map.org>`_ and is the only way to add data to the database. **DO NOT** add any data directly to the live database *unless* you are fixing a critical issue and you have already changed the information on the curator.
+
+Changes can be marked as hidden and although they will be displayed on the beta version (with a warning) when exported they will be ignored and not imported into the live version.
+
+You can also bulk add changes using a CSV file, the structure of which is provided in the curator.
+
+Deploying
+^^^^^^^^^
+
+The DAA uses `Fabric <www.fabfile.org/>`_ to deploy both the versions and the data. The following commands are provided:
+
+deploy
+   Take a local copy of the data and deploy to the beta version.
+deploy_live
+   Take a local copy of the site and deploy to the live version. This requires a version number which is listed on both the bottom of the site and if you have pulled the entire repo, as tags. The version number sets a tag and must be incremented after every deploy, no matter the size.
+reload_live_data
+   Export the beta version's database (cleaning it and removing any hidden changes) then deploy to the live version. This also takes a backup of the database before making any changes.
+   
+When deploying the data to the live database an automatic backup is taken and stored in the deploy_backups folder.
+
+
+Server Configuration
+--------------------
+
+Live
+^^^^
+
+Upstart config
+   /etc/init/daa.conf
+Nginx config
+   /etc/nginx/sites-enabled/ageing-map.org.conf
+Location
+   /srv/www/ageing-map.org/
+Database
+   daa
+
+Beta
+^^^^
+
+Upstart file
+   /etc/init/daa_beta.conf
+Nginx config
+   /etc/nginx/sites-enabled/beta.ageing-map.org.conf
+Location
+   /srv/www/beta.ageing-map.org/
+Database
+   beta_daa
+

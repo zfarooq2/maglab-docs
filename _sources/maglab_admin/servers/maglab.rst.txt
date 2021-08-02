@@ -1,0 +1,62 @@
+Maglab
+======
+
+The Maglab server is the original web server for the group. It now acts as the primary webserver for a number of the older or lighter websites as well as the DNS server for the group.
+
+.. sidebar:: Details
+
+   :External IP Address: 178.79.139.157
+   :Domain Names(s): - ageing-map.org (primary)
+                     - cryopreservation.org.uk
+                     - genefriends.org (DNS)
+                     - naked-mole-rat.org (DNS)
+                     - bowhead-whale.org (DNS)
+
+Specifications
+---------------
+
+* Linode VPS
+* Intel(R) Xeon(R) CPU L5520  @ 2.27GHz (8 core)
+* Ubuntu 14.04.5 LTS (trusty)
+* 8GiB Memory
+* 40GB disk space (auto partitioned by Linode)
+  
+Services
+--------
+
+* DNS (provided by Linode control panel really)
+* Webserver (nginx + apache)
+* Database server (PostgreSQL + MySQL)
+
+IP Tables
+---------
+
+:Open TCP Ports: 21, 22, 25, 53, 80, 443, 465, 8080, 10050
+:Open UDP Ports: 53
+
+Websites
+--------
+
+* :doc:`Digital Ageing Atlas </websites/daa>`: http://ageing-map.org
+* :doc:`LibAge </websites/libage>`: http://libage.ageing-map.org
+* :doc:`HAGR </websites/hagr>`: http://hagr.ageing-map.org
+* :doc:`Cryopreservation </websites/cryopreservation>`: http://cryopreservation.org.uk
+* :doc:`Active SETI </websites/seti>`: http://active-seti.info
+
+Location
+--------
+
+Linode facility, London
+
+Billing
+-------
+
+The Server is automatically re-billed every year. Depending on the status of the university credit card on the account (it regularly changes) you will either have to:
+
+* If the credit card is still active you will need to fill in a order requisition form and have that signed by Pedro, then take it to the finance office to have it logged on their system.
+* If the credit card has expired you will need to do the same as above, but this time you will need to have the finance office change the card on the account (you will be required to log in and show them what to change).
+
+Using the Linode control panel
+------------------------------
+
+Linode provides a control panel for managing the billing, DNS and status of the servers on that account. You can log on to this at the following address: https://manager.linode.com/linodes. 

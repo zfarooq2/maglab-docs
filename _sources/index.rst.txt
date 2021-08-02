@@ -1,0 +1,20 @@
+.. Maglab Server Administration and Development Guide master file, created by
+   sphinx-quickstart on Tue Jul 29 10:16:38 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+The Integrative Genomics of Ageing Group
+====================================
+
+Server Administration and Development Guide
+-------------------------------------------
+
+This guide includes information on server administration and development within Integrative Genomics of Ageing Group (also known as Maglab!).
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   maglab_admin/index
+   maglab_dev/index
